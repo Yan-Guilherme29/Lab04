@@ -27,10 +27,19 @@ public class EstoqueLoja {
 
         for (int i = 0; i < quantidadesPorLotes.length; i++) {
             System.out.println("Lote: " + (i + 1) + ": ");
-            System.out.println("Quantidade Disponível: ");
-            System.out.println();
+            System.out.println("Quantidade Disponível: " + quantidadesPorLotes[i][0]);
+            System.out.println("Quantidades Vendidas: " + quantidadesPorLotes[i][1]);
         }
-
     }
 
+    public boolean verificarLoteCritico(int limite) {
+
+        for (int i = 0; i < quantidadesPorLotes.length; i++) {
+            if (quantidadesPorLotes[i][1] > limite) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
+
